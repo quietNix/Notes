@@ -38,3 +38,10 @@
 a{
     color:#1ABC9C;
 }
+
+#Submit {
+    position: absolute; 
+    right: 10%;
+    bottom: 10%;
+    color: red;
+}

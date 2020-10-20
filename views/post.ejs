@@ -1,0 +1,9 @@
+<%- include("partials/header") %>
+<h1><%= authorsPost.title %> </h1>
+<p><%= authorsPost.content %> </p>
+<form action="/delete" method="post">
+    <input type="hidden" name="postID" value="<%=authorsPost._id%>">
+    <input type="hidden" name="user" value="<%=user%>">
+    <input id ="Submit" type="submit" value="Delete">
+</form>
+<%- include("partials/footer") %>
