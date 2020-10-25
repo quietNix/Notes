@@ -135,7 +135,7 @@ app.post("/register", function (req, res) {
   Post.register({ username: req.body.username, posts: [newItem] }, req.body.password, function (err, user) {
     if (err) {
       console.log("err" + err);
-      res.redirect("/auth/register");
+      res.redirect("/login");
     }
     else {
       passport.authenticate('local')(req, res, function () {      //creating cookie in browser telling this user already authenticated
@@ -331,7 +331,11 @@ app.get("/cc/logout", function (req, res) {
 });
 
 
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log("Server started on port 3000");
 });
